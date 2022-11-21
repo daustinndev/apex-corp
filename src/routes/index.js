@@ -7,6 +7,7 @@ import Ofert from "../pages/ofert";
 import Recent from "../pages/recent";
 import Report from "../pages/report";
 import Sale from "../pages/sale";
+import Searsh from "../pages/searsh";
 import Supplier from "../pages/supplier";
 import User from "../pages/user";
 import UserProfile from "../pages/user/profile";
@@ -21,12 +22,23 @@ export const Router = () => {
       <Routes>
         <Route
           path="/"
+
           element={
             <NavRouterInclude navName="home">
               <Home />
             </NavRouterInclude>
           }
         />
+        <Route
+          path="/:option"
+          
+          element={
+            <NavRouterInclude navName="home">
+              <Home />
+            </NavRouterInclude>
+          }
+        />
+
         <Route
           path="/recent"
           element={
@@ -35,6 +47,9 @@ export const Router = () => {
             </NavRouterInclude>
           }
         />
+
+
+
         <Route
           path="/inventory"
           element={
@@ -44,6 +59,34 @@ export const Router = () => {
           }
         />
         <Route
+          path="/inventory/:option/:uid"
+          element={
+            <NavRouterInclude navName="inventory">
+              <Inventory />
+            </NavRouterInclude>
+          }
+        />
+        <Route
+          path="/inventory/:option"
+          element={
+            <NavRouterInclude navName="inventory">
+              <Inventory />
+            </NavRouterInclude>
+          }
+        />
+        <Route
+          path="/inventory/searsh/:searsh"
+          element={
+            <NavRouterInclude navName="inventory">
+              <Inventory />
+            </NavRouterInclude>
+          }
+        />
+
+
+
+
+        <Route
           path="/sale"
           element={
             <NavRouterInclude navName="sale">
@@ -52,6 +95,15 @@ export const Router = () => {
           }
         />
         <Route
+          path="/sale/:option"
+          element={
+            <NavRouterInclude navName="sale">
+              <Sale />
+            </NavRouterInclude>
+          }
+        />
+
+        <Route
           path="/ofert"
           element={
             <NavRouterInclude navName="ofert">
@@ -59,6 +111,7 @@ export const Router = () => {
             </NavRouterInclude>
           }
         />
+
         <Route
           path="/report"
           element={
@@ -67,6 +120,7 @@ export const Router = () => {
             </NavRouterInclude>
           }
         />
+
         <Route
           path="/supplier"
           element={
@@ -75,27 +129,12 @@ export const Router = () => {
             </NavRouterInclude>
           }
         />
+
         <Route
-          path="/user"
+          path="/users"
           element={
             <NavRouterInclude navName="user">
               <User />
-            </NavRouterInclude>
-          }
-        />
-        <Route
-          path="/wallet"
-          element={
-            <NavRouterInclude navName="wallet">
-              <Wallet />
-            </NavRouterInclude>
-          }
-        />
-        <Route
-          path="/help"
-          element={
-            <NavRouterInclude navName="help">
-              <Help />
             </NavRouterInclude>
           }
         />
@@ -108,6 +147,43 @@ export const Router = () => {
             </NavRouterInclude>
           }
         />
+
+        <Route
+          path="/wallet"
+          element={
+            <NavRouterInclude navName="wallet">
+              <Wallet />
+            </NavRouterInclude>
+          }
+        />
+
+        <Route
+          path="/help"
+          element={
+            <NavRouterInclude navName="help">
+              <Help />
+            </NavRouterInclude>
+          }
+        />
+
+        <Route
+          path="/help"
+          element={
+            <NavRouterInclude navName="help">
+              <Help />
+            </NavRouterInclude>
+          }
+        />
+
+        <Route
+          path="/searsh/:searsh"
+          element={
+            <NavRouterInclude navName="">
+              <Searsh />
+            </NavRouterInclude>
+          }
+        />
+
         {/* <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} /> */}
       </Routes>

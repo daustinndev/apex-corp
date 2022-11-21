@@ -30,10 +30,10 @@ export const ButtomItem = ({
         </Button>
         {title && textHover && (
           <TextAbsolute
-          data-aos="fade"
-          data-aos-delay="500"
-          data-aos-easing="ease-out-cubic"
-          data-aos-duration="300"
+            data-aos="fade"
+            data-aos-delay="500"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="300"
           >
             <span>{title}</span>
           </TextAbsolute>
@@ -50,7 +50,7 @@ const TextAbsolute = styled.div`
   top: 45px;
   right: 0%;
   transform: translateX(-10%);
-  span{
+  span {
     font-size: 12px;
     color: var(--black-500);
   }

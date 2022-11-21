@@ -18,51 +18,37 @@ export const NavRouterInclude = ({ children, navName }) => {
         <NadbarContainer>
           <Sidebar />
         </NadbarContainer>
-        <NavInvisible></NavInvisible>
         <MainCOntainer>{children}</MainCOntainer>
       </Main>
     </>
   );
 };
 
-export const NadbarRouterInclude = ({ children }) => {
-  return (
-    <>
-      {/* <Nav /> */}
-      <Main>{children}</Main>
-    </>
-  );
-};
+
 const MainCOntainer = styled.div`
   width: 100%;
+  margin: 15px 10px;
+  padding-left: 21rem;
 `;
 const Main = styled.div`
-  max-width: var(--container-width);
+  max-width: var(--container-home);
   margin: 0 auto;
   display: flex;
-  padding: 0.3rem 0.5rem;
-`;
-const NavInvisible = styled.div`
-  min-width: 350px;
-  @media (max-width: 788px) {
-    min-width: 0px;
-  }
+  padding: 0.2rem 0.4rem;
 `;
 const NadbarContainer = styled.div`
-  width: 350px;
-  height: 100vh;
+  width: 21rem;
+  top: 57px;
+  bottom: 0;
   position: fixed;
   overflow-y: auto;
   /* border-right: 1px solid var(--black-400); */
   z-index: var(--zIndex-15);
-  &::-webkit-scrollbar {
+  &::-webkit-scrollbar-thumb{
     background-color: transparent;
-    width: 5px;
-    cursor: pointer;
   }
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--black-500);
-    border-radius: 3px;
+  &:hover::-webkit-scrollbar-thumb{
+    background: var(--black-800);
   }
   @media (max-width: 788px) {
     width: 0px;

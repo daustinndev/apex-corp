@@ -32,7 +32,7 @@ export const ButtomItem = ({
             >
               <Icon UrlImgProfile={UrlImgProfile}>
                 {UrlImg && (
-                  <img src={"/icons-custom/" + UrlImg + ".png"} alt={Text} />
+                  <img src={UrlImg} />
                 )}
                 {UrlImgProfile && <img src={UrlImgProfile} alt={Text} />}
               </Icon>
@@ -52,7 +52,7 @@ export const ButtomItem = ({
           >
             <Icon UrlImgProfile={UrlImgProfile}>
               {UrlImg && (
-                <img src={"/icons-custom/" + UrlImg + ".png"} alt={Text} />
+                <img src={UrlImg}/>
               )}
               {UrlImgProfile && <img src={UrlImgProfile} alt={Text} />}
             </Icon>
@@ -80,32 +80,34 @@ const TextAbsolute = styled.div`
   padding: 2px 8px;
   top: 45px;
   right: 0%;
+  z-index: 100;
   transform: translateX(-10%);
   span {
     font-size: 12px;
     color: var(--black-500);
   }
 `;
-const ButtonBtn = styled.button`
+const ButtonBtn = styled.div`
   display: flex;
   align-items: center;
   background-color: ${(props) =>
-    props.Active ? "var(--black-500)" : "transparent"};
+    props.Active ? "var(--black-600)" : "transparent"};
   border-radius: 8px;
   width: 100%;
   border: transparent;
   cursor: ${(props) => (props.Disabled ? "default" : "pointer")};
-  padding: 6px 7px;
+  padding: 8px 7px;
   transition: 0.2s;
   &:hover {
     background-color: ${(props) =>
-      props.Disabled ? "transparent" : "var(--black-500)"};
+      props.Disabled ? "transparent" : "var(--black-600)"};
   }
 `;
 const Icon = styled.div`
-  min-width: 34px;
-  max-width: 34px;
-  height: 34px;
+  min-width: 32px;
+  max-width: 32px;
+  height: 32px;
+  width: 32px;
   overflow: hidden;
   border-radius: ${(props) => (props.UrlImgProfile ? "50%" : "0")};
   border: ${(props) =>
@@ -120,7 +122,7 @@ const Icon = styled.div`
 `;
 const SpanText = styled.span`
   color: var(--write-200);
-  font-size: 15px;
+  font-size: 14px;
   margin-left: 10px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
